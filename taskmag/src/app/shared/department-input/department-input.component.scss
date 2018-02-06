@@ -1,0 +1,16 @@
+@import "~element-angular/theme/index.css";
+.department-input {
+    min-height: 500px;
+    min-width: 400px;
+}
+.demo-box {
+    display: flex;
+    min-height: 500px;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+}
+.grid-content {
+    margin: 10px;
+}

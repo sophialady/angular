@@ -1,0 +1,42 @@
+<div  class="department-input">
+  <div class="demo-box">
+    <header>
+        <div el-row type="flex" class="row-bg" justify="center">
+          <h2>部门选择</h2>
+        </div>
+    </header>
+    <main>
+      <div el-row type="flex" class="row-bg" justify="center">
+        <div el-col [span]="24">
+          <div class="grid-content bg-purple">
+            <el-input placeholder="组织架构"  
+            icon="search"
+            [model]="input2">
+            </el-input>
+          </div>
+        </div>
+      </div>
+      <div el-row type="flex" class="row-bg" justify="center">
+        <div el-col [span]="24">
+          <el-tree [model]="data3" [show-checkbox]="true" #tree>
+          </el-tree>
+
+          <div class="tree-box">
+              <el-button (click)="findAllChecked()">获取所有选中</el-button>
+              <el-button (click)="removeAllChecked()">清除所有</el-button>
+              <el-button (click)="updateItemChecked()">更新选中</el-button>
+              <el-button (click)="updateItemExpanded()">更新展开</el-button>
+              </div>
+        </div>        
+      </div>
+    </main>
+    <footer>
+      <div el-row type="flex" class="row-bg" justify="center">
+          <div el-col [span]="12">
+              <el-button type="primary" [round]="true" [elDisabled]="true" >确定</el-button>
+              <el-button  type="danger" [round]="true">取消</el-button>
+          </div>
+      </div>
+    </footer>
+  </div>
+</div>

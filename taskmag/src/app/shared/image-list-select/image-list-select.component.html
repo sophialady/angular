@@ -1,0 +1,12 @@
+<div>
+  <span>{{title}}</span>
+  <md-icon class="avatar" [svgIcon]="selected" *ngIf="useSvgIcon else imgSelected" ></md-icon>
+  <ng-template #imgSelected>
+    <img [src]="selected" class="cover">
+  </ng-template>
+</div>  
+<div class="scroll-container">
+  <md-grid-list>
+    
+  </md-grid-list>
+</div>

@@ -1,0 +1,107 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form, $event)">
+  <md-card>
+    <div el-row type="flex" class="row-bg" justify="center">
+        <h1 >注册</h1>               
+    </div>     
+    <md-tab-group headerPosition="30" [dynamicHeight]="true" [selectedIndex]="selectedTab" (selectChange)="onTabChange($event.index)">
+      <md-tab label="帐号信息">
+          <md-list>
+            <md-list-item>
+              <md-icon md-list-icon svgIcon="phone"></md-icon>
+              <md-input-container class="full-width80" style="margin-left:5px;">
+                <input mdInput placeholder="手机号码" formControlName="phone" type="tel">
+              </md-input-container>
+            </md-list-item>
+            <md-list-item>
+              <md-icon md-list-icon [svgIcon]="hide ? 'password' : 'lock'" (click)="hide = !hide" ></md-icon>
+              <md-input-container class="full-width80" style="margin-left:5px;">
+                <input mdInput placeholder="您的密码" [type]="hide ? 'text' : 'password'" formControlName="password">
+              </md-input-container>
+            </md-list-item>
+            <md-list-item>
+              <md-icon md-list-icon [svgIcon]="hide ? 'password' : 'lock'" (click)="hide = !hide" ></md-icon>
+              <md-input-container class="full-width80" style="margin-left:5px;">
+                <input mdInput placeholder="为避免失误请再次输入" [type]="hide ? 'text' : 'password'" formControlName="password">
+              </md-input-container>
+            </md-list-item>
+            <md-list-item>
+               <md-slide-toggle [checked]="toggleInfoCheck" color="primary" (change)="onChangeToggle($event.checked)">
+                   <div  class="primary"  [ngClass]="{'toggleinfo': !toggleInfoCheck}">完善个人信息</div>
+                </md-slide-toggle>
+            </md-list-item>
+          </md-list>
+          <div el-row type="flex" class="row-bg" justify="center">
+                <div class="zhuceandzhaohui">
+                    <div class="zhuce">
+                        <el-button type="text" routerLink="/login">登录</el-button> 
+                    </div>
+                    <div class="zhaohui">
+                        <el-button type="text" routerLink="/forgot">找回密码</el-button>
+                    </div>
+                </div> 
+          </div>
+          <md-card-actions>
+                <div el-row type="flex" class="row-bg" justify="center">
+                    <button md-raised-button class="full-width80 btn" color="primary" type="submit" [disabled]="!form.valid">注册</button>
+                </div>
+          </md-card-actions>
+      </md-tab>
+      <md-tab label="个人信息">
+          <md-list>
+            <md-list-item>
+              <md-icon md-list-icon svgIcon="user"></md-icon>
+              <md-input-container class="full-width80" style="margin-left:5px;">
+                <input mdInput placeholder="姓名" formControlName="name">
+              </md-input-container>
+            </md-list-item>
+            <md-list-item>
+              <md-icon md-list-icon svgIcon="eimal"></md-icon>
+              <md-input-container class="full-width80" style="margin-left:5px;">
+                <input mdInput  placeholder="邮箱" formControlName="email">
+              </md-input-container>
+            </md-list-item>
+            <md-list-item>
+              <md-icon md-list-icon svgIcon="depart" (click)="openDepartDialog()" ></md-icon>
+              <md-input-container class="full-width80" style="margin-left:5px;">
+                <input mdInput  placeholder="所属部门" formControlName="depart">
+              </md-input-container>
+            </md-list-item>
+            <md-list-item>
+                <md-icon md-list-icon svgIcon="date"></md-icon>
+                <md-input-container class="full-width80" style="margin-left:5px;">
+                    <button mdSuffix [mdDatepickerToggle]="birthPicker" type="button"></button>
+                    <input mdInput [mdDatepicker]="birthPicker" type="text" placeholder="入职日期" formControlName="date" />
+                    <md-error>日期不正确</md-error>
+                    <md-datepicker  #birthPicker></md-datepicker>
+                </md-input-container>   
+            </md-list-item>
+            <md-list-item>
+                <app-image-list-select
+                [useSvgIcon]="true"
+                [cols]="6"
+                [title]="'选择头像：'"
+                [items]="avatars$ | async"
+                formControlName="avatar">
+                </app-image-list-select>
+            </md-list-item>
+          </md-list>
+          <div el-row type="flex" class="row-bg" justify="center">
+                <div class="zhuceandzhaohui">
+                    <div class="zhuce">
+                        <el-button type="text" routerLink="/login">登录</el-button> 
+                    </div>
+                    <div class="zhaohui">
+                        <el-button type="text" routerLink="/forgot">找回密码</el-button>
+                    </div>
+                </div> 
+          </div>
+          <md-card-actions>
+                <div el-row type="flex" class="row-bg" justify="center">
+                    <button md-raised-button class="full-width80 btn" color="primary" type="submit" [disabled]="!form.valid">注册</button>
+                </div>
+          </md-card-actions>
+      </md-tab>
+    </md-tab-group>
+  </md-card>
+</form>
+

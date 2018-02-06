@@ -1,0 +1,18 @@
+.footer {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     position: relative;
+     flex-direction: column;
+     background: #f5f5f5;
+}
+.loginfooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-content {
+    color: #999;
+    line-height: 18px;
+    text-align: center;
+}

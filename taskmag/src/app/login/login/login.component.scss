@@ -1,0 +1,23 @@
+@import "~element-angular/theme/index.css";
+md-card{
+    width: 20em;
+    margin: 5px;
+    flex: 0 0 20em;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.text-center {
+    margin: 10px;
+    text-align: center;
+}
+.Blue {
+    background: #58B7FF
+}
+

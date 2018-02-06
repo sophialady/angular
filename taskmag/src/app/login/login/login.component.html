@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)" >
+    <md-card class="md-warn" >
+        <md-card-title >
+            <div el-row type="flex" class="row-bg" justify="center">
+                <h3 >团场绩效管理系统</h3>               
+            </div>
+        </md-card-title>
+        <md-card-content>
+            <div el-row type="flex" class="row-bg" justify="center">
+                <md-input-container class="full-width80">
+                    <input mdInput type="text" placeholder="用户名" formControlName="name" >
+                    <md-error>用户名是必填项哦</md-error>
+                </md-input-container>
+            </div>
+            <div el-row type="flex" class="row-bg" justify="center">
+                <md-input-container class="full-width80">
+                    <input mdInput type="password" placeholder="密码" formControlName="password">
+                    <md-error>密码不正确哦</md-error>
+                </md-input-container>  
+            </div>
+            <div el-row type="flex" class="row-bg" justify="center">
+                <div class="zhuceandzhaohui">
+                    <div class="zhuce">
+                        还没有账户? <el-button type="text" routerLink="/register">注册</el-button> 
+                    </div>
+                    <div class="zhaohui">
+                        忘记密码? <el-button type="text" routerLink="/forgot">找回</el-button>
+                    </div>
+                </div> 
+            </div>
+        </md-card-content>
+        <md-card-actions>
+            <div el-row type="flex" class="row-bg" justify="center">
+                <button md-raised-button class="full-width80 btn" color="primary" type="submit" [disabled]="!form.valid">登录</button>
+            </div>
+        </md-card-actions>
+    </md-card>
+</form>
